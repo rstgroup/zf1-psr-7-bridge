@@ -3,6 +3,7 @@
 namespace RstGroup\Zend1MvcPsrMessageBridge\Factory;
 
 use Asika\Http\Response;
+use Asika\Http\ServerRequest;
 use Asika\Http\Stream\Stream;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -18,7 +19,13 @@ class AsikaHttpFactory implements PsrMessageFactoryInterface
      */
     public function createRequest(Zend_Controller_Request_Http $request)
     {
-        // TODO: Implement createRequest() method.
+        $serverParams = $request->getServer();
+        $serverParams = empty($serverParams) ? array() : $serverParams;
+        $uri = $request->getRequestUri();
+        $method = $request->getMethod();
+        $headers = getallheaders();
+
+        return new ServerRequest($serverParams, array(), $uri, $method, 'php://input', $headers);
     }
 
     /**
