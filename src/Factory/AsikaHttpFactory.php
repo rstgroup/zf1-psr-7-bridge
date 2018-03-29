@@ -11,7 +11,7 @@ use RstGroup\Zend1MvcPsrMessageBridge\PsrMessageFactoryInterface;
 use Zend_Controller_Request_Http;
 use Zend_Controller_Response_Http;
 
-final class AsikaHttpFactory implements PsrMessageFactoryInterface
+class AsikaHttpFactory implements PsrMessageFactoryInterface
 {
     /**
      * @param Zend_Controller_Request_Http $request

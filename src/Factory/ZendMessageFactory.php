@@ -6,7 +6,7 @@ use RstGroup\Zend1MvcPsrMessageBridge\ZendMessageFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-final class ZendMessageFactory implements ZendMessageFactoryInterface
+class ZendMessageFactory implements ZendMessageFactoryInterface
 {
     /**
      * @param ServerRequestInterface $request
